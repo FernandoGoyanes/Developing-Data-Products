@@ -1,5 +1,8 @@
 library(dplyr)
 
+data <- readRDS("healthexp.Rds")
+data$Region <- as.factor(data$Region)
+
 shinyServer(function(input, output, session) {
 
   # Provide explicit colors for regions, so they don't get recoded when the
